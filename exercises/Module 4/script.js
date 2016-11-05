@@ -1,218 +1,95 @@
-// Scales
-// var scale = d3.scale.linear()
-//                 .domain([100, 500])
-//                 .range([10, 50]);
+var svg = d3.select("body")
+	.append("svg")
+	.attr("height","100%")
+	.attr("width","100%");
 
-// d3.select('#chart')
-//     .append('svg')
-//         .attr('width',scale(100))
-//         .attr('height',scale(200))
-//         .style('background', 'red')
+// Line Path
 
+// var b = [{x:10,y:25},{x:10,y:75},{x:60,y:75},{x:10,y:25}];
 
-//var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+// var line = d3.line()
+//        .x(function(d,i){ return d.x; })
+//        .y(function(d,i){ return d.y; });
 
-//Width and height
-// var w = 600;
-// var h = 500;
-// var barPadding = 1;
+// svg.append("path")
+//       .attr("fill","none")
+//       .attr("stroke","blue")
+//       .attr("d",line(b));
 
-// //Create SVG element
-// var svg = d3.select("body")
-//             .append("svg")
-//             .attr("width", w)
-//             .attr("height", h);
+// Line Generator Exercise
+// var b = [{x:5,y:5},{x:10,y:15},{x:20,y:7},{x:30,y:18},{x:40,y:10}];
+// var line = d3.line()
+// 		.x(function(d){ return d.x*4; })
+// 		.y(function(d){ return d.y*6; });
 
-// var scale = d3.scale.linear()
-//         .domain([0, d3.max(dataset)])
-//         .range([0, h])
+// svg.append("path")
+//       .attr("fill","none")
+//       .attr("stroke","black")
+//       .attr("d",line(b));
 
-// var colors = d3.scale.linear()
-//         .domain([0, d3.max(dataset)])
-//         .range(['#B58929','#85992C'])
+// Curve Generator
+// var b = [{x:5,y:5},{x:10,y:15},{x:20,y:7},{x:30,y:18},{x:40,y:10}];
+// var line = d3.line()
+// 		.x(function(d){ return d.x*4; })
+// 		.y(function(d){ return d.y*6; })
+// 		.curve(d3.curveCardinal);
 
-// var xScale = d3.scale.ordinal()
-//         .domain(d3.range(0, dataset.length))
-//         .rangeBands([0, w])
+// svg.append("path")
+//       .attr("fill","none")
+//       .attr("stroke","black")
+//       .attr("d",line(b));
 
-//Drawing Bar Chart
-// svg.selectAll("rect")
-//     .data(dataset)
-//     .enter()
-//     .append("rect")
-//         // .attr("x", function(d, i) {
-//         // return i * (w / dataset.length);
-//         // })
-//         .attr("x",function(d,i) {
-//             return xScale(i);
-//         })
-//         .attr("y", function(d) {
-//         return h - scale(d);  
-//         })
-//         //.attr("width", w / dataset.length - barPadding)
-//         .attr("width",xScale.rangeBand())
-//         .attr("height", function(d) {
-//         return scale(d);
-        //})
-        //.attr("fill", "teal")
-        // .attr("fill",colors)
-        // .on('mouseover', function(d) {
-        // tempColor = this.style.fill;
-        // d3.select(this)
-        //     .style('opacity', .5)
-        //     .style('fill', 'yellow')
-        // })
+// Area Path
+// var dataArray = [25,26,28,32,37,45,55,70,90,120,135,150,160,168,172,177,180];
+// var dataYears = ['2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016'];
 
-        // .on('mouseout', function(d) {
-        // d3.select(this)
-        //     .style('opacity', 1)
-        //     .style('fill', tempColor)
-        // })
+// var height = 200;
+// var width = 500;
 
-// var xAxis = d3.svg.axis();
-// xAxis.scale(xScale);
-// xAxis.orient("bottom");
-// svg.append("g")
-//     .attr("class", "axis")
-//     .call(xAxis);
+// var area = d3.area()
+// 		.x(function(d,i){ return i*20; })
+// 		.y0(height)
+// 		.y1(function(d){ return height-d; });
 
+// svg.append("path")
+// 	.attr("d",area(dataArray));
 
-// var bardata = [20, 30, 105, 15, 85];
+//Grouping
+// var group = svg.append("g")
 
-// var height = 400,
-//     width = 600,
-//     barWidth = 50,
-//     barOffset = 5;
+// group.append("rect")
+// 	.attr("x","100")
+// 	.attr("y","100")
+// 	.attr("height","200")
+// 	.attr("width","200")
 
-// var tempColor;
+// group.append("circle")
+// 	.attr("cx","100")
+// 	.attr("cy","100")
+// 	.attr("r","50")
 
-// Without Scaling
-// d3.select('#chart').append('svg')
-//     .attr('width', width)
-//     .attr('height', height)
-//     .style('background', '#C9D7D6')
-//     .selectAll('rect').data(bardata)
-//     .enter().append('rect')
-//         .style('fill', '#C61C6F')
-//         .attr('width', barWidth)
-//         .attr('height', function(d) {
-//             return d;
-//         })
-//         .attr('x', function(d,i) {
-//             return i * (barWidth + barOffset);
-//         })
-//         .attr('y', function(d) {
-//             return height - d;
-//         })
+// group.append("circle")
+// 	.attr("cx","300")
+// 	.attr("cy","100")
+// 	.attr("r","50")
 
-// With Y Scaling
-// var yScale = d3.scale.linear()
-//         .domain([0, d3.max(bardata)])
-//         .range([0, height])
+//Transform
+// group.attr("transform","translate(300,0)")
+//group.attr("transform","rotate(10)")
+// group.attr("transform","scale(0.5)")
 
-// d3.select('#chart').append('svg')
-//     .attr('width', width)
-//     .attr('height', height)
-//     .style('background', '#C9D7D6')
-//     .selectAll('rect').data(bardata)
-//     .enter().append('rect')
-//         .style('fill', '#C61C6F')
-//         .attr('width', barWidth)
-//         .attr('height', function(d) {
-//             return yScale(d);
-//         })
-//         .attr('x', function(d,i) {
-//             return i * (barWidth + barOffset);
-//         })
-//         .attr('y', function(d) {
-//             return height - yScale(d);
-//         })
+// Grouping and Transform Exercise
+// var a = [5,11,18];
 
-// X Scaling
-// var xScale = d3.scale.ordinal()
-//         .domain(d3.range(0, bardata.length))
-//         .rangeBands([0, width])
+// var group = svg.append("g")
+// 			.attr("transform","translate(300,0)");
 
-// d3.select('#chart').append('svg')
-//     .attr('width', width)
-//     .attr('height', height)
-//     .style('background', '#C9D7D6')
-//     .selectAll('rect').data(bardata)
-//     .enter().append('rect')
-//         .style('fill', '#C61C6F')
-//         .attr('width', xScale.rangeBand())
-//         .attr('height', function(d) {
-//             return yScale(d);
-//         })
-//         .attr('x', function(d,i) {
-//             return xScale(i);
-//         })
-//         .attr('y', function(d) {
-//             return height - yScale(d);
-//         })
+// group.selectAll("circle")
+//   .data(a)
+//   .enter().append("circle")
+//   .attr("cx",function(d,i){return 50+i*50;})
+//   .attr("cy","50")
+//   .attr("r",function(d,i){return d;})
+//   .attr("fill","black");
 
-//Color Scaling
-// var colors = d3.scale.linear()
-// .domain([0, bardata.length])
-// .range(['#B58929','#85992C'])
-
-// d3.select('#chart').append('svg')
-//     .attr('width', width)
-//     .attr('height', height)
-//     .style('background', '#C9D7D6')
-//     .selectAll('rect').data(bardata)
-//     .enter().append('rect')
-//         .style('fill', colors)
-//         .attr('width', xScale.rangeBand())
-//         .attr('height', function(d) {
-//             return yScale(d);
-//         })
-//         .attr('x', function(d,i) {
-//             return xScale(i);
-//         })
-//         .attr('y', function(d) {
-//             return height - yScale(d);
-//         })
-
-// Event 
-	// .on('mouseover', function(d) {
- //    	d3.select(this)
- //        	.style('opacity', .5)
- //    })
-	// .on('mouseout', function(d) {
- //    	d3.select(this)
- //        	.style('opacity', 1)
- //    })
-
-	// .on('mouseover', function(d) {
- //        tempColor = this.style.fill;
- //        d3.select(this)
- //            .style('opacity', .5)
- //            .style('fill', 'yellow')
- //    })
-
- //    .on('mouseout', function(d) {
- //        d3.select(this)
- //            .style('opacity', 1)
- //            .style('fill', tempColor)
- //    })
-
-
-// Transitions
-
-// d3.select("body")
-//     .style("background-color", "green") 
-//     .transition()
-//     .style("background-color", "red")
-
-// Delay and Duration
-d3.select("body")
-    .style("background-color", "green") 
-    .transition()
-    .delay(500)
-    .duration(1000)
-    .style("background-color", "red");
-
-// d3.select("body").transition()
-//     .styleTween("background-color", function() { return d3.interpolate("green", "red"); })
 
