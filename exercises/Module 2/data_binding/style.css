@@ -1,0 +1,8 @@
+html, body {
+  margin: 5px;
+ /* height: 100%;*/
+}
+
+li {
+	padding-left: 10px;
+}

@@ -14,13 +14,22 @@ var svg = d3.select("body")
 // 	.attr("stroke-width","2");
 
 // Line Exercise
+
+// svg.append("line")
+// 	.attr("x1","100")
+// 	.attr("y1","100")
+// 	.attr("x2","200")
+// 	.attr("y2","200")
+// 	.attr("stroke","black")
+// 	.attr("stroke-width","5");
+
 // svg.append("line")
 // 	.attr("x1","200")
-// 	.attr("y1","200")
+// 	.attr("y1","00")
 // 	.attr("x2","300")
 // 	.attr("y2","100")
 // 	.attr("stroke","black")
-// 	.attr("stroke-width","2");
+// 	.attr("stroke-width","5");
 
 // svg.selectAll("line")
 //   .data(a)
@@ -51,7 +60,21 @@ var svg = d3.select("body")
 // 	.attr("width","50")
 // 	.attr("fill","red");
 
+
 // Rectangle Exercise
+
+// var a = [50,110,180];
+// var width = 30;
+// var height = 200;
+
+// svg.selectAll("rect")
+// 	.data(a)
+// 	.enter().append("rect")
+// 	.attr("x",function(d,i){return 100+i*50;})
+// 	.attr("y",function(d){return height-d})
+// 	.attr("height",function(d){return d;})
+// 	.attr("width","30")
+// 	.attr("fill","red");
 // var a = [5,11,18];
 
 // svg.selectAll("rect")
@@ -65,9 +88,18 @@ var svg = d3.select("body")
 
 //Create Circle
 // svg.append("circle")
-// 	.attr("cx","100")
+// .attr("cx","100")
+// .attr("cy","100")
+// .attr("r","20")
+// .attr("fill","black");
+
+// var a = [5,11,18];
+// svg.selectAll("circle")
+// 	.data(a)
+// 	.enter().append("circle")
+// 	.attr("cx",function(d,i){return 100+i*50;})
 // 	.attr("cy","100")
-// 	.attr("r","20")
+// 	.attr("r",function(d){return d;})
 // 	.attr("fill","black");
 
 // Circle Exercise 
@@ -124,26 +156,6 @@ var svg = d3.select("body")
 // 	.attr("font-size","20")
 // 	.attr("color","red")
 // 	.text("Hello World");
-
-
-//SVG Graphics
-// d3.select('#chart')
-//   .append('svg')
-//     .attr('width', 600)
-//     .attr('height', 400)
-//     .style('background', "#93A1A1")
-//   .append("rect")
-//     .attr('x', 200)
-//     .attr('y', 100)
-//     .attr('height', 200)
-//     .attr('width', 200)
-//     .style('fill', '#CB4B19')
-//   d3.select('svg')
-//     .append('circle')
-//     .attr('cx','300')
-//     .attr('cy','200')
-//     .attr('r','50')
-//     .style('fill', '#840043')
 
 
 // Path

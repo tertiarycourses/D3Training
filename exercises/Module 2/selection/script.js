@@ -1,4 +1,41 @@
 //Select elements
+// d3.select("p")
+//   .style("color","red");
+
+// d3.selectAll("p")
+//   .style("color","red");
+
+// Selection Exercise
+// d3.select("ul")
+//   .style("color","green");
+
+// d3.selectAll("li:nth-child(even)")
+//   .style("color","red");
+
+// d3.selectAll("li:nth-child(2n+1)")
+//   .style("color","green");
+
+// d3.select("#orange")
+//   .attr("height","300px")
+//   .attr("width","400px")
+//   .attr("class","highlight");
+
+// d3.select("p")
+//   .text("Today is Sunday")
+//   .style("color","blue");
+
+// d3.select("li:nth-child(4n)")
+//   .append("li")
+//   .html("Obama");
+
+// d3.selectAll("li:nth-child(n+1)")
+//   .insert("li")
+//   .html("Hello");
+
+
+// d3.selectAll("li:nth-child(2n+1)")
+//   .style("color","green");
+
 //d3.select('.item').text('select')
 //d3.selectAll('.item').text('select')
 
@@ -71,90 +108,6 @@
 //   .selectAll('li:nth-child(2n+1)')
 //   .style('color','red')
   
-//Binding data
-
- var myStyles = [
-  { width: 200,
-    color: '#A57706'},
-  { width: 230,
-    color: '#BD3613'},
-  { width: 220,
-    color: '#D11C24'},
-  { width: 290,
-    color: '#C61C6F'},
-  { width: 236,
-    color: '#595AB7'},
-  { width: 230,
-    color: '#2176C7'}
-];
-
-// d3.selectAll('.item')
-//   .data(myStyles)
-//   .style({
-//     'color': 'white',
-//     'background' : function(d) {
-//       return d.color;
-//     },
-//     width : function(d) {
-//       return d.width + 'px';
-//     } 
-//   })
-
-
-// var myStyles = [
-//   { width: 200,
-//     name: 'Barot Bellingham',
-//     color: '#A57706'},
-//   { width: 230,
-//     name: 'Hassum Harrod',
-//     color: '#BD3613'},
-//   { width: 220,
-//     name: 'Jennifer Jerome',
-//     color: '#D11C24'},
-//   { width: 290,
-//     name: 'Richard Tweed',
-//     color: '#C61C6F'},
-//   { width: 236,
-//     name: 'Lorenzo Garcia',
-//     color: '#595AB7'},
-//   { width: 230,
-//     name: 'Xhou Ta',
-//     color: '#2176C7'}
-// ];
-
-// d3.selectAll('#chart').selectAll('div')
-//   .data(myStyles)
-//   .enter().append('div')
-//   .classed('item', true)
-//   .text(function(d) {
-//     return d.name;
-//   })
-//   .style({
-//     'color': 'white',
-//     'background' : function(d) {
-//       return d.color;
-//     },
-//     width : function(d) {
-//       return d.width + 'px';
-//     } 
-//   })
-// Update existing paragraphs
-// var distances = [2.23, 2.39, 2.59, 2.77];
-
-// var p = d3.select('body').selectAll('p')
-//          .data(distances)
-//          .text(String);
- 
-// // Add any new paragraphs needed
-// p.enter() 
-//   .append('p')
-//   .text(String);
- 
-// // Remove any paragraphs no longer needed
-// p.exit()
-//   .remove();
-
-
 //Styling selecte elements
 // d3.selectAll('.item').on("click", function() {
 //   d3.select(this).style("color", "red");
@@ -163,5 +116,7 @@
 //Filter
 // var even = d3.selectAll(".item").filter(":nth-child(even)");
 // even.text('select')
+
+
 
 

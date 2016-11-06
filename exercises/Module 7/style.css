@@ -1,0 +1,7 @@
+rect:hover {
+	fill:blue;
+}
+
+rect:active {
+	fill:yellow;
+}

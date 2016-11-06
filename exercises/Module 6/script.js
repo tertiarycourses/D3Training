@@ -4,6 +4,10 @@
 // 		console.log(data);
 // 	});
 
+// d3.csv("prices.csv", function(data) {
+// 		console.log(data);
+// 	});
+
 //Importing TSV data
 // d3.tsv("prices.tsv")
 // 	.get(function(data) {
@@ -16,15 +20,16 @@
 //   		console.log(data);
 // 	});
 
-// var parseDate = d3.timeParse("%m/%d/%Y");
 var bardata = [];
+// d3.csv("data.csv", function(data) {
+// 	console.log(data);
+// }) 
 d3.csv("data.csv")
 	.get(function(data) {
-		for (key in data) {
-			// console.log(data[key].value);
-			bardata.push(data[key].value);
+		for (i in data) {
+			bardata.push(data[i].value);
 		}
-	console.log(bardata);
+	// console.log(bardata);
     var svg = d3.select("body")
         	.append("svg")
         	.attr("height","100%")

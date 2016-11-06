@@ -4,23 +4,23 @@ var svg = d3.select("body")
             .attr("height","100%");
 
 // Mouseover and Mouseout
-// svg.append("rect")
-//     .attr("x","100")
-//     .attr("y","100")
-//     .attr("height","100")
-//     .attr("width","100")
-//     .attr("fill","red")
-//     .on("mouseover", function() { 
-//             d3.select(this)
-//             .style("opacity","0.5")
-//             .attr("fill", "blue");
+svg.append("rect")
+    .attr("x","100")
+    .attr("y","100")
+    .attr("height","100")
+    .attr("width","100")
+    .attr("fill","red")
+    .on("mouseover", function() { 
+            d3.select(this)
+            // .style("opacity","0.5")
+            .attr("fill", "blue");
 
-//     })
-//    .on("mouseout", function() {
-//         d3.select(this)
-//         .style("opacity","1")
-//         .attr("fill", "red");
-//     })
+    })
+   .on("mouseout", function() {
+        d3.select(this)
+        // .style("opacity","1")
+        .attr("fill", "red");
+    })
   
 //Mouseover and mouseout exercise
 // dataset = [100,200,300]; 
@@ -75,19 +75,19 @@ var svg = d3.select("body")
 //     .attr("transform","translate(300,0)");
 
 
-svg.append("circle")
-    .attr("cx","100")
-    .attr("cy",100)
-    .attr("r",10)
-    .attr("fill","red")
-    .on("mousedown", animate);
+// svg.append("circle")
+//     .attr("cx","100")
+//     .attr("cy",100)
+//     .attr("r",10)
+//     .attr("fill","red")
+//     .on("mousedown", animate);
 
-function animate(){
-    d3.select(this)
-        .transition()
-        .duration(1000)
-        .attr("r", 50)
-};
+// function animate(){
+//     d3.select(this)
+//         .transition()
+//         .duration(1000)
+//         .attr("r", 50)
+// };
 
 // var bardata = [];
 
