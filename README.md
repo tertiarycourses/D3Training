@@ -10,40 +10,47 @@ https://www.tertiarycourses.com.sg/data-visualization-with-d3.html
 <p><strong>Module 1. Get Started</strong></p>
 <ul>
 <li>What is D3.js?</li>
-<li>Installing Sublime Text</li>
 <li>Downloading and installing D3</li>
 <li>First D3 code</li>
 </ul>
-<p><strong>Module 2. Learning the Basics</strong></p>
+<p><br /><strong>Module 2. Basics of D3.js</strong></p>
 <ul>
 <li>Selecting Elements</li>
 <li>Controlling HTML</li>
-<li>Modifying Attributes and CSS</li>
-<li>Binding Data</li>
+<li>Modifying Attributes</li>
+<li>Modifying CSS</li>
+<li>Data Binding</li>
 </ul>
-<p><strong>Module 3. Working with SVG Graphics</strong></p>
+<p><strong>Module 3. Basic SVG Graphics</strong></p>
 <ul>
-<li>SVG In HTML5</li>
-<li>Drawing SVG Graphics with D3</li>
-<li>Styling SVG Graphics with D3</li>
-<li>Creating a Simple Bar Chart with SVG</li>
+<li>SVG Canvas</li>
+<li>Basic SVG Shapes</li>
 </ul>
-<p><strong>Module 4. Using D3 Methods</strong></p>
+<p><br /><strong>Module 4. Advanced SVG Graphics</strong></p>
+<ul>
+<li>SVG Path &amp; Generators</li>
+<li>Grouping</li>
+<li>Transform</li>
+</ul>
+<p><strong>Module 5. Scales &amp; Axes</strong></p>
 <ul>
 <li>Scales</li>
-<li>Events</li>
-</ul>
-<p><strong>Module 5. D3 Data Manipulation</strong></p>
-<ul>
-<li>Uploading Data</li>
-<li>Javascript Math&nbsp;</li>
+<li>Linear Scale</li>
 <li>Axis</li>
+<li>Parse Date</li>
+<li>Time Scale</li>
+<li>Ordinal Scale</li>
 </ul>
-<p><strong>Module 6. D3 Plugins</strong></p>
+<p><strong>Module 6. Importing Data into D3</strong></p>
 <ul>
-<li>D3 Plugins</li>
-<li>Transitions &amp; Animations</li>
+<li>Import CSV</li>
+<li>Import TSV</li>
+<li>Import JSON</li>
 </ul>
-
+<p><strong>Module 7. Events &amp; Transitions</strong></p>
+<ul>
+<li>Events</li>
+<li>Transitions</li>
+</ul>
 
 
