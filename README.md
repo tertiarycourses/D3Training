@@ -1,5 +1,5 @@
 # Data Visualization with D3.js
-## by [Tertiary Infotech Pte. Ltd] (https://www.tertiarycourses.com.sg/)
+## by [Tertiary Infotech Pte. Ltd](https://www.tertiarycourses.com.sg/)
 
 These are the exercise files used for [Data Visualization with D3.js](https://www.tertiarycourses.com.sg/data-visualization-with-d3.html) course. 
 
