@@ -6,6 +6,7 @@ These are the exercise files used for [Data Visualization with D3.js](https://ww
 The course outline can be found in 
 
 https://www.tertiarycourses.com.sg/data-visualization-with-d3.html
+
 https://www.tertiarycourses.com.my/data-visualization-with-d3.html
 
 <p><strong>Module 1. Get Started</strong></p>
